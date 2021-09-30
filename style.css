@@ -1,0 +1,70 @@
+body{ 
+    font-family: 'Work Sans', sans-serif;
+    color:#59c9a5;
+    box-sizing: border-box;
+    background-color: #59c9a5;
+    margin: 0;
+    height: 100vh;
+} 
+h1{ 
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    color:#ef6f6c;
+} 
+.chap-1{
+    text-decoration: underline;
+}
+.contenant{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.game{
+    width: 600px;
+    height: 450px;
+    background-color:#465775;
+    background-image: url(https://images.unsplash.com/photo-1504899011678-594a2d24ac33?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80);
+    background-size: 40% auto;
+    background-position: center 200px;
+    background-repeat: no-repeat;
+    border: 5px solid #ef6f6c;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   align-items: center;
+}
+.resume{
+    text-align: center;
+}
+ul{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    padding: 0;
+}
+nav{
+    width: 100%;
+    height: 100%;
+}
+button{
+    color: #465775;
+    font-size: 13px;
+    text-transform: uppercase;
+    list-style-type: none;
+    display:inline-block;
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    border: 2px solid #59c9a5;
+  }
+  button:hover{
+      background-color: #ef6f6c;
+      cursor: pointer;
+  }
