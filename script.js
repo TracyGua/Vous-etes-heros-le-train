@@ -153,7 +153,7 @@ const chaptersObj = {
     },
   },
 };
-//
+
 function goToChapter(chapterName) {
   const chapitre =
     chaptersObj[chapterName].subtitle + "\n" + chaptersObj[chapterName].text;
