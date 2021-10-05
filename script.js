@@ -157,6 +157,11 @@ const chaptersObj = {
 function goToChapter(chapterName) {
   const chapitre =
     chaptersObj[chapterName].subtitle + "\n" + chaptersObj[chapterName].text;
+  const titre = document.querySelector('.titre');
+  titre.innerHTML = subtitle;
+  
+  const resume = document.querySelector('.resume');
+  resume.innerHTML = text;
   return chapitre;
 }
 console.log(goToChapter("le_depart"));
