@@ -155,13 +155,12 @@ const chaptersObj = {
 };
 
 function goToChapter(chapterName) {
-  const chapitre =
-    chaptersObj[chapterName].subtitle + "\n" + chaptersObj[chapterName].text;
-  const titre = document.querySelector('.titre');
-  titre.innerHTML = subtitle;
-  
-  const resume = document.querySelector('.resume');
-  resume.innerHTML = text;
-  return chapitre;
+  const titre = document.querySelector(".titre");
+  const resume = document.querySelector(".resume");
+
+  titre.innerText = chaptersObj[chapterName].subtitle;
+  resume.innerText = chaptersObj[chapterName].text;
+
+  document.querySelector(".imageChapitre").src = chaptersObj[chapterName].img;
 }
 console.log(goToChapter("le_depart"));
