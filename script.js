@@ -162,5 +162,11 @@ function goToChapter(chapterName) {
   resume.innerText = chaptersObj[chapterName].text;
 
   document.querySelector(".imageChapitre").src = chaptersObj[chapterName].img;
+
+  const tableau = chaptersObj[chapterName].options;
+  for (let index = 0; index < 3; index++) {
+    const opt = tableau[index];
+    return opt;
+  }
 }
 console.log(goToChapter("le_depart"));
