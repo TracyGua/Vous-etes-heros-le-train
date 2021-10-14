@@ -161,7 +161,8 @@ function goToChapter(chapterName) {
   titre.innerText = chaptersObj[chapterName].subtitle;
   resume.innerText = chaptersObj[chapterName].text;
 
-  document.querySelector(".imageChapitre").src = chaptersObj[chapterName].img;
+  let image = document.querySelector(".imageChapitre");
+   image.src = chaptersObj[chapterName].img;
 
   const tableau = chaptersObj[chapterName].options;
   for (let index = 0; index < 3; index++) {
@@ -169,4 +170,4 @@ function goToChapter(chapterName) {
     return opt;
   }
 }
-console.log(goToChapter("le_depart"));
+console.log(goToChapter("mort_1"));
