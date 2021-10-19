@@ -164,10 +164,16 @@ function goToChapter(chapterName) {
   let image = document.querySelector(".imageChapitre");
    image.src = chaptersObj[chapterName].img;
 
-  const tableau = chaptersObj[chapterName].options;
-  for (let index = 0; index < 3; index++) {
-    const opt = tableau[index];
-    return opt;
+  const tableauArr = chaptersObj[chapterName].options;
+
+  for (let index = 0; index < tableauArr.length; index++) {
+    const choix = tableauArr[index];
+    const bouton = document.querySelectorAll('.button');
+    bouton.forEach(function(click){
+      click.innerHTML = choix;
+      console.log(choix)
+    })
   }
 }
-console.log(goToChapter("le_depart"));
+
+console.log(goToChapter("arret_2"));
