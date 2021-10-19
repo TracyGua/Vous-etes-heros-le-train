@@ -170,4 +170,4 @@ function goToChapter(chapterName) {
     return opt;
   }
 }
-console.log(goToChapter("mort_1"));
+console.log(goToChapter("le_depart"));
