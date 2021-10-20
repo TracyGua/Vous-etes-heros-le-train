@@ -175,7 +175,7 @@ const chaptersObj = {
     ],
   },
 };
-/*
+
 function goToChapter(chapterName) {
   const titre = document.querySelector(".titre");
   const resume = document.querySelector(".resume");
@@ -193,31 +193,7 @@ function goToChapter(chapterName) {
   let bouton = "";
   for (let index = 0; index < tableauArr.length; index++) {
     let choix = tableauArr[index].action;
-    bouton += `<button type="button" onclick ="${choix}">${tableauArr[index].text}</button>`;
-  }
-  barreBouton.innerHTML = bouton;
-}*/
-
-function goToChapter(chapterName) {
-  let titre = document.querySelector(".titre");
-  let resume = document.querySelector(".resume");
-  let img = document.querySelector(".imageChapitre");
-  let barreBouton = document.querySelector(".choix");
-
-  titre.innerHTML = chaptersObj[chapterName].subtitle;
-  resume.innerHTML = chaptersObj[chapterName].text;
-  img.innerHTML = `<img src="${chaptersObj[chapterName].img}"/>`;
-
-  let bouton = "";
-  for (
-    let index = 0;
-    index < chaptersObj[chapterName].options.length;
-    index++
-  ) {
-    const barre = chaptersObj[chapterName].options[index].action;
-    bouton += `<div class="choix">
-    <button type="button" onclick ="${chaptersObj[chapterName].options[index].action}">${chaptersObj[chapterName].options[index].text}</button>
-    </div>`;
+    bouton += `<ul class="choix"><button type="button" onclick ="${choix}">${tableauArr[index].text}</button></ul>`;
   }
   barreBouton.innerHTML = bouton;
 }
