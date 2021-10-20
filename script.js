@@ -193,8 +193,9 @@ function goToChapter(chapterName) {
   let bouton = "";
   for (let index = 0; index < tableauArr.length; index++) {
     let choix = tableauArr[index].action;
-    bouton += `<ul class="choix"><button type="button" onclick ="${choix}">${tableauArr[index].text}</button></ul>`;
+    bouton += `<ul class="choix"><button type="button" onclick ='${choix}'>${tableauArr[index].text}</button></ul>`;
   }
   barreBouton.innerHTML = bouton;
 }
 console.log(goToChapter("le_depart"));
+let canFight = false;
