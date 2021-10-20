@@ -6,7 +6,7 @@ function fight() {
 }
 
 function impact() {
-  if (canFight == true) {
+  if (canFight === true) {
     goToChapter("gagne_bataille");
   } else {
     goToChapter("mort_1");
