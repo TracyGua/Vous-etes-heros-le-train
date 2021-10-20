@@ -157,6 +157,27 @@ const chaptersObj = {
 function goToChapter(chapterName) {
   const titre = document.querySelector(".titre");
   const resume = document.querySelector(".resume");
+  titre.innerText = chaptersObj[chapterName].subtitle;
+  resume.innerText = chaptersObj[chapterName].text;
+  let image = document.querySelector(".imageChapitre");
+  image.src = chaptersObj[chapterName].img;
+  let barreBouton = document.querySelector(".choix");
+
+  let bouton = "";
+  for (
+    let index = 0;
+    index < chaptersObj[chapterName].options.length;
+    index++
+  ) {
+    const choix = chaptersObj[chapterName].options[index].actions;
+    bouton += `<ul class="choix"><button type="button" onclick ="${chaptersObj[chapterName].options[index].action}">${chaptersObj[chapterName].options[index].text}</ul>`;
+  }
+  barreBouton.innerHTML = bouton;
+}
+
+/*function goToChapter(chapterName) {
+  const titre = document.querySelector(".titre");
+  const resume = document.querySelector(".resume");
 
   titre.innerText = chaptersObj[chapterName].subtitle;
   resume.innerText = chaptersObj[chapterName].text;
@@ -174,6 +195,6 @@ function goToChapter(chapterName) {
     choix = tableauArr[index].action;
     bouton = `<ul class="choix"><button type="button" onclick ="${choix}">${tableauArr[index].text}</ul>`;
   }
-  barreBouton.innerHTML = bouton;
-}
+  barreBouton.innerHTML = "yooo";
+}*/
 console.log(goToChapter("le_depart"));
