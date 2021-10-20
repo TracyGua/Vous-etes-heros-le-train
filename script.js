@@ -172,7 +172,7 @@ function goToChapter(chapterName) {
   let choix;
   for (let index = 0; index < tableauArr.length; index++) {
     choix = tableauArr[index].action;
-    bouton = `<ul class="choix"><button type="button" onclick ="${choix}">${tableauArr[index].text}</ul>`;
+    bouton += `<ul class="choix"><button type="button" onclick ="${choix}">${tableauArr[index].text}</button></ul>`;
   }
   barreBouton.innerHTML = bouton;
 }
