@@ -162,18 +162,18 @@ function goToChapter(chapterName) {
   resume.innerText = chaptersObj[chapterName].text;
 
   let image = document.querySelector(".imageChapitre");
-   image.src = chaptersObj[chapterName].img;
+  image.src = chaptersObj[chapterName].img;
+
+  let barreBouton = document.querySelector(".choix");
 
   const tableauArr = chaptersObj[chapterName].options;
 
+  let bouton;
+  let choix;
   for (let index = 0; index < tableauArr.length; index++) {
-    const choix = tableauArr[index];
-    const bouton = document.querySelectorAll('.button');
-    bouton.forEach(function(click){
-      click.innerHTML = choix;
-      console.log(choix)
-    })
+    choix = tableauArr[index].action;
+    bouton = `<ul class="choix"><button type="button" onclick ="${choix}">${tableauArr[index].text}</ul>`;
   }
+  barreBouton.innerHTML = bouton;
 }
-
-console.log(goToChapter("arret_2"));
+console.log(goToChapter("le_depart"));
