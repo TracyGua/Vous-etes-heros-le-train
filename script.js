@@ -1,3 +1,18 @@
+let canFight = false;
+
+function fight() {
+  canFight = true;
+  goToChapter("debut_bataille");
+}
+
+function impact() {
+  if (canFight == true) {
+    goToChapter("gagne_bataille");
+  } else {
+    goToChapter("mort_1");
+  }
+}
+
 const chaptersObj = {
   le_depart: {
     subtitle: "Le départ",
@@ -57,8 +72,19 @@ const chaptersObj = {
     text: "Savez-vous vous battre?",
     img: "assets/imgs/chap_06.jpg",
     options: [
-      { text: "Oui", action: 'goToChapter("gagne_bataille")' },
-      { text: "Non", action: 'goToChapter("mort_1")' },
+      { text: "Oui", action: "fight()" },
+      { text: "Non", action: 'goToChapter("debut_bataille")' },
+    ],
+  },
+  debut_bataille: {
+    subtitle: "Le premier coup de poing",
+    text: "Ils commencent à vous donner des coups",
+    img: "assets/imgs/chap_17.jpg",
+    options: [
+      {
+        text: "Prochain chapitre",
+        action: "impact()",
+      },
     ],
   },
   mort_1: {
@@ -198,4 +224,3 @@ function goToChapter(chapterName) {
   barreBouton.innerHTML = bouton;
 }
 console.log(goToChapter("le_depart"));
-let canFight = false;
