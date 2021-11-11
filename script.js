@@ -24,6 +24,7 @@ const chaptersObj = {
         action: 'goToChapter("arret_1")',
       },
     ],
+    video: "assets/video/train_passe.mp4",
   },
   arret_1: {
     subtitle: "Le premier arrêt",
@@ -55,6 +56,7 @@ const chaptersObj = {
         action: 'goToChapter("retrouve")',
       },
     ],
+    video: "assets/video/courir.mp4",
   },
   retrouve: {
     subtitle: "Retrouvé",
@@ -86,6 +88,7 @@ const chaptersObj = {
         action: "impact()",
       },
     ],
+    video: "assets/video/fight.mp4",
   },
   mort_1: {
     subtitle: "Trop faible, trop tard",
@@ -155,6 +158,7 @@ const chaptersObj = {
         action: 'goToChapter("autre_train")',
       },
     ],
+    video: "assets/video/train_passe2.mp4",
   },
   accident: {
     subtitle: "L'Accident",
@@ -166,6 +170,7 @@ const chaptersObj = {
         action: 'goToChapter("mort_2")',
       },
     ],
+    video: "assets/video/accident.mp4",
   },
   mort_2: {
     subtitle: "Une fin tragique",
