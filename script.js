@@ -236,5 +236,8 @@ function goToChapter(chapterName) {
   } else {
     baliseImg.innerHTML = `<img class="imageChapitre" src=${chaptersObj[chapterName].img}>`;
   }
+
+  const son = new Audio("assets/son/zoom.wav");
+  son.play();
 }
 console.log(goToChapter("le_depart"));
