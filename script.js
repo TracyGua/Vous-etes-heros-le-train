@@ -214,8 +214,8 @@ function goToChapter(chapterName) {
   titre.innerText = chaptersObj[chapterName].subtitle;
   resume.innerText = chaptersObj[chapterName].text;
 
-  let image = document.querySelector(".imageChapitre");
-  image.src = chaptersObj[chapterName].img;
+  let baliseImg = document.querySelector(".imgChapitre");
+  baliseImg.innerHTML = `<img class="imageChapitre" src=${chaptersObj[chapterName].img}>`;
 
   let barreBouton = document.querySelector(".choix");
 
@@ -227,5 +227,14 @@ function goToChapter(chapterName) {
     bouton += `<ul class="choix"><button type="button" onclick ='${choix}'>${tableauArr[index].text}</button></ul>`;
   }
   barreBouton.innerHTML = bouton;
+
+  if (chaptersObj[chapterName].video != undefined) {
+    const vid = chaptersObj[chapterName].video;
+    baliseImg.innerHTML = `<video class="imageChapitre" src=${vid} loop muted></video>`;
+    let vid2 = document.querySelector(".imageChapitre");
+    vid2.play();
+  } else {
+    baliseImg.innerHTML = `<img class="imageChapitre" src=${chaptersObj[chapterName].img}>`;
+  }
 }
 console.log(goToChapter("le_depart"));
