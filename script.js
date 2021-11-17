@@ -252,7 +252,7 @@ function goToChapter(chapterName) {
     localStorage.getItem("fight", canFight);
   }
 }
-//goToChapter("le_depart");
+goToChapter("le_depart");
 
 if (localStorage.getItem("chapitre") != "undefined") {
   goToChapter(localStorage.getItem("chapitre"));
