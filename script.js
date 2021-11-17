@@ -247,14 +247,14 @@ function goToChapter(chapterName) {
     function decision() {
       canFight = true;
     }
-    localStorage.setItem("f", decision);
+    localStorage.setItem("canfight", decision);
   }
 }
 
 if (localStorage.getItem("chapitre") != "undefined") {
   goToChapter(localStorage.getItem("chapitre"));
-  localStorage.getItem("f");
+  localStorage.getItem("canfight");
 } else {
   goToChapter("le_depart");
 }
-console.log(localStorage.getItem("f"));
+console.log(localStorage.getItem("canfight"));
