@@ -239,5 +239,9 @@ function goToChapter(chapterName) {
 
   const son = new Audio("assets/son/zoom.wav");
   son.play();
+
+  //sauvegarde
+  localStorage.setItem("chapitre", chaptersObj[chapterName]);
 }
 console.log(goToChapter("le_depart"));
+console.log(localStorage);
