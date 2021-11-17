@@ -257,4 +257,5 @@ if (localStorage.getItem("chapitre") != "undefined") {
 } else {
   goToChapter("le_depart");
 }
+
 console.log(localStorage.getItem("canfight"));
