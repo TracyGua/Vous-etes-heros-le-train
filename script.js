@@ -244,7 +244,7 @@ function goToChapter(chapterName) {
   let chap = chapterName;
   localStorage.setItem("chapitre", chap);
 }
-goToChapter("le_depart");
+//goToChapter("le_depart");
 
 if (localStorage.getItem("chapitre") != null) {
   goToChapter(localStorage.getItem("chapitre"));
