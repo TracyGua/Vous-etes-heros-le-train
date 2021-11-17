@@ -251,7 +251,7 @@ function goToChapter(chapterName) {
   }
 }
 
-if (localStorage.getItem("chapitre") != "undefined") {
+if (localStorage.getItem("chapitre") != "le_depart") {
   goToChapter(localStorage.getItem("chapitre"));
   localStorage.getItem("canfight");
 } else {
