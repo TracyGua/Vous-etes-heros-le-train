@@ -243,9 +243,28 @@ function goToChapter(chapterName) {
   //sauvegarde
   let chap = chapterName;
   localStorage.setItem("chapitre", chap);
+  if (canFight == true) {
+    localStorage.getItem("fight", canFight);
+  }
+
+  localStorage.setItem("chapitre", chap);
+  if (canFight == true) {
+    localStorage.getItem("fight", canFight);
+  }
 }
 //goToChapter("le_depart");
 
-if (localStorage.getItem("chapitre") != null) {
+if (localStorage.getItem("chapitre") != "undefined") {
   goToChapter(localStorage.getItem("chapitre"));
+  localStorage.getItem("fight");
+} else {
+  goToChapter("le_depart");
 }
+
+if (localStorage.getItem("chapitre") != "undefined") {
+  goToChapter(localStorage.getItem("chapitre"));
+  localStorage.getItem("fight");
+} else {
+  goToChapter("le_depart");
+}
+localStorage.setItem("bob", "hiiii");
