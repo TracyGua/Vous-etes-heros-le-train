@@ -241,7 +241,17 @@ function goToChapter(chapterName) {
   son.play();
 
   //sauvegarde
-  localStorage.setItem("chapitre", chaptersObj[chapterName]);
+  let chap = chapterName;
+  localStorage.setItem("chapitre", chap);
 }
-console.log(goToChapter("le_depart"));
+goToChapter("le_depart");
 console.log(localStorage);
+
+if (
+  localStorage.getItem("chapitre") != "undefined" &&
+  localStorage.getItem("chapitre") != null
+) {
+  goToChapter(localStorage.getItem("chapitre"));
+  console.log("loog");
+}
+console.log(localStorage.getItem("chapitre"));
