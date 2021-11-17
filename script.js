@@ -243,12 +243,7 @@ function goToChapter(chapterName) {
   //sauvegarde
   let chap = chapterName;
   localStorage.setItem("chapitre", chap);
-  if (canFight == true) {
-    function decision() {
-      canFight = true;
-    }
-    localStorage.setItem("canfight", decision);
-  }
+  
 }
 
 if (localStorage.getItem("chapitre") != "le_depart") {
@@ -257,5 +252,9 @@ if (localStorage.getItem("chapitre") != "le_depart") {
 } else {
   goToChapter("le_depart");
 }
-
+if (canFight == true) {
+  localStorage.setItem("canfight", canFight);
+} else {
+  canFight = false
+}
 console.log(localStorage.getItem("canfight"));
