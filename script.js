@@ -252,7 +252,9 @@ if (localStorage.getItem("chapitre") != "le_depart") {
   goToChapter("le_depart");
 }
 
-if(canFight != false ){
+if(canFight == true){
   localStorage.setItem("canFight", canFight);
-  localStorage.getItem("canFight");
+  localStorage.getItem("canFight")
+} else {
+  canFight = false
 }
