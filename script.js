@@ -245,16 +245,14 @@ function goToChapter(chapterName) {
   localStorage.setItem("chapitre", chap);
   
 }
-
 if (localStorage.getItem("chapitre") != "le_depart") {
   goToChapter(localStorage.getItem("chapitre"));
-  localStorage.getItem("canfight");
+  
 } else {
   goToChapter("le_depart");
 }
-if (canFight == true) {
-  localStorage.setItem("canfight", canFight);
-} else {
-  canFight = false
+
+if(canFight != false ){
+  localStorage.setItem("canFight", canFight);
+  localStorage.getItem("canFight");
 }
-console.log(localStorage.getItem("canfight"));
