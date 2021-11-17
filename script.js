@@ -2,7 +2,7 @@ let canFight = false;
 
 function fight() {
   canFight = true;
-  localStorage.setItem('canFight', canFight)
+  localStorage.setItem("canFight", canFight);
   goToChapter("debut_bataille");
 }
 
@@ -244,14 +244,14 @@ function goToChapter(chapterName) {
   //sauvegarde
   let chap = chapterName;
   localStorage.setItem("chapitre", chap);
-  
 }
+
 if (localStorage.getItem("chapitre") != "le_depart") {
   goToChapter(localStorage.getItem("chapitre"));
-  
 } else {
   goToChapter("le_depart");
 }
+
 /*
 if(canFight != false){
   localStorage.setItem("canFight", canFight);
@@ -260,4 +260,8 @@ if(canFight != false){
   canFight = false
 }*/
 
-canFight = localStorage.getItem('canFight');
+if (localStorage.getItem("canFight") == "true") {
+  canFight = true;
+} else {
+  canFight = false;
+}
