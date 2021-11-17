@@ -245,13 +245,7 @@ function goToChapter(chapterName) {
   localStorage.setItem("chapitre", chap);
 }
 goToChapter("le_depart");
-console.log(localStorage);
 
-if (
-  localStorage.getItem("chapitre") != "undefined" &&
-  localStorage.getItem("chapitre") != null
-) {
+if (localStorage.getItem("chapitre") != null) {
   goToChapter(localStorage.getItem("chapitre"));
-  console.log("loog");
 }
-console.log(localStorage.getItem("chapitre"));
