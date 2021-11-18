@@ -208,10 +208,9 @@ const chaptersObj = {
   },
 };
 
-/*premier chargement de page
-const start = 'goToChapter("le_depart")';
-localStorage.setItem("chargement", start);
-localStorage.getItem("chargement");*/
+if(localStorage.getItem('chapitre') == null){
+  goToChapter("le_depart")
+}
 
 function goToChapter(chapterName) {
   const titre = document.querySelector(".titre");
