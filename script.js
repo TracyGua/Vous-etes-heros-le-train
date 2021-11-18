@@ -265,3 +265,7 @@ if (localStorage.getItem("canFight") == "true") {
 } else {
   canFight = false;
 }
+
+if (localStorage.chapitre == "undefined") {
+  goToChapter("le_depart");
+}
