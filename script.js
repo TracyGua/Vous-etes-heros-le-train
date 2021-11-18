@@ -208,9 +208,10 @@ const chaptersObj = {
   },
 };
 
-if (localStorage.getItem("chapitre") == null) {
-  goToChapter("le_depart");
-}
+const start = 'goToChapter("le_depart")';
+
+localStorage.setItem("chargement", start);
+localStorage.getItem("chargement");
 
 function goToChapter(chapterName) {
   const titre = document.querySelector(".titre");
@@ -256,6 +257,12 @@ if (localStorage.getItem("chapitre") != "le_depart") {
   goToChapter("le_depart");
 }
 
+if (localStorage.getItem("canFight") == "true") {
+  canFight = true;
+} else {
+  canFight = false;
+}
+
 /*
 if(canFight != false){
   localStorage.setItem("canFight", canFight);
@@ -263,9 +270,3 @@ if(canFight != false){
 } else {
   canFight = false
 }*/
-
-if (localStorage.getItem("canFight") == "true") {
-  canFight = true;
-} else {
-  canFight = false;
-}
