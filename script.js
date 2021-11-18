@@ -208,6 +208,10 @@ const chaptersObj = {
   },
 };
 
+if (localStorage.getItem("chapitre") == null) {
+  goToChapter("le_depart");
+}
+
 function goToChapter(chapterName) {
   const titre = document.querySelector(".titre");
   const resume = document.querySelector(".resume");
@@ -264,8 +268,4 @@ if (localStorage.getItem("canFight") == "true") {
   canFight = true;
 } else {
   canFight = false;
-}
-
-if (localStorage.chapitre == "undefined") {
-  goToChapter("le_depart");
 }
