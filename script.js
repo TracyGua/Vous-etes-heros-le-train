@@ -98,7 +98,7 @@ const chaptersObj = {
     options: [
       {
         text: "Recommencer le voyage",
-        action: 'goToChapter("le_depart")',
+        action: 'restart()',
       },
     ],
   },
@@ -132,7 +132,7 @@ const chaptersObj = {
     options: [
       {
         text: "Recommencer le voyage",
-        action: 'goToChapter("le_depart")',
+        action: 'restart()',
       },
     ],
   },
@@ -180,7 +180,7 @@ const chaptersObj = {
     options: [
       {
         text: "Recommencer le voyage",
-        action: 'goToChapter("le_depart")',
+        action: 'restart()',
       },
     ],
   },
@@ -202,11 +202,16 @@ const chaptersObj = {
     options: [
       {
         text: "Recommencer le voyage",
-        action: 'goToChapter("le_depart")',
+        action: 'restart()',
       },
     ],
   },
 };
+
+function restart(){
+  goToChapter("le_depart")
+  canFight = false;
+}
 
 if(localStorage.getItem('chapitre') == null){
   goToChapter("le_depart")
