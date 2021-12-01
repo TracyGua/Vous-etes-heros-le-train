@@ -217,6 +217,8 @@ if(localStorage.getItem('chapitre') == null){
   goToChapter("le_depart")
 }
 
+const son = new Audio("assets/son/zoom.wav");
+
 function goToChapter(chapterName) {
   const titre = document.querySelector(".titre");
   const resume = document.querySelector(".resume");
@@ -247,7 +249,7 @@ function goToChapter(chapterName) {
     baliseImg.innerHTML = `<img class="imageChapitre" src=${chaptersObj[chapterName].img}>`;
   }
 
-  const son = new Audio("assets/son/zoom.wav");
+  son.currentTime = 0;  
   son.play();
 
   //sauvegarde
@@ -267,10 +269,9 @@ if (localStorage.getItem("canFight") == "true") {
   canFight = false;
 }
 
-/*
-if(canFight != false){
-  localStorage.setItem("canFight", canFight);
-  localStorage.getItem("canFight")
-} else {
-  canFight = false
-}*/
+//fonction reset
+function reset(){
+  canFight = false;
+  localStorage.clear()
+  goToChapter('le_depart')
+}
