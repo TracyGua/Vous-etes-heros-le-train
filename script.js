@@ -24,6 +24,10 @@ const chaptersObj = {
         text: "Prochain chapitre",
         action: 'goToChapter("arret_1")',
       },
+      {
+        text: "Effacer ma partie",
+        action:'reset()',
+      },
     ],
     video: "assets/video/train_passe.mp4",
   },
@@ -34,6 +38,10 @@ const chaptersObj = {
     options: [
       { text: "Descendre du train", action: 'goToChapter("attaque")' },
       { text: "Rester dans le train", action: 'goToChapter("arret_2")' },
+      {
+        text: "Effacer ma partie",
+        action:'reset()',
+      },
     ],
   },
   attaque: {
@@ -45,6 +53,10 @@ const chaptersObj = {
         text: "Prochain chapitre",
         action: 'goToChapter("prochain_train")',
       },
+      {
+        text: "Effacer ma partie",
+        action:'reset()',
+      },
     ],
   },
   prochain_train: {
@@ -55,6 +67,10 @@ const chaptersObj = {
       {
         text: "Prochain chapitre",
         action: 'goToChapter("retrouve")',
+      },
+      {
+        text: "Effacer ma partie",
+        action:'reset()',
       },
     ],
     video: "assets/video/courir.mp4",
@@ -68,6 +84,10 @@ const chaptersObj = {
         text: "Prochain chapitre",
         action: 'goToChapter("se_battre")',
       },
+      {
+        text: "Effacer ma partie",
+        action:'reset()',
+      },
     ],
   },
   se_battre: {
@@ -77,6 +97,10 @@ const chaptersObj = {
     options: [
       { text: "Oui", action: "fight()" },
       { text: "Non", action: 'goToChapter("debut_bataille")' },
+      {
+        text: "Effacer ma partie",
+        action:'reset()',
+      },
     ],
   },
   debut_bataille: {
@@ -87,6 +111,10 @@ const chaptersObj = {
       {
         text: "Prochain chapitre",
         action: "impact()",
+      },
+      {
+        text: "Effacer ma partie",
+        action:'reset()',
       },
     ],
     video: "assets/video/fight.mp4",
@@ -100,6 +128,10 @@ const chaptersObj = {
         text: "Recommencer le voyage",
         action: 'restart()',
       },
+      {
+        text: "Effacer ma partie",
+        action:'reset()',
+      },
     ],
   },
   gagne_bataille: {
@@ -110,6 +142,10 @@ const chaptersObj = {
       {
         text: "Prochain chapitre",
         action: 'goToChapter("quel_transport")',
+      },
+      {
+        text: "Effacer ma partie",
+        action:'reset()',
       },
     ],
   },
@@ -123,6 +159,10 @@ const chaptersObj = {
         text: "Prendre le prochain train",
         action: 'goToChapter("victoire_1")',
       },
+      {
+        text: "Effacer ma partie",
+        action:'reset()',
+      },
     ],
   },
   victoire_1: {
@@ -133,6 +173,10 @@ const chaptersObj = {
       {
         text: "Recommencer le voyage",
         action: 'restart()',
+      },
+      {
+        text: "Effacer ma partie",
+        action:'reset()',
       },
     ],
   },
@@ -146,6 +190,10 @@ const chaptersObj = {
         text: "Descendre acheter à manger rapidement",
         action: 'goToChapter("turbulences")',
       },
+      {
+        text: "Effacer ma partie",
+        action:'reset()',
+      },
     ],
   },
   turbulences: {
@@ -157,6 +205,10 @@ const chaptersObj = {
       {
         text: "Descendre au prochain arrêt",
         action: 'goToChapter("autre_train")',
+      },
+      {
+        text: "Effacer ma partie",
+        action:'reset()',
       },
     ],
     video: "assets/video/train_passe2.mp4",
@@ -170,6 +222,10 @@ const chaptersObj = {
         text: "Prochain chapitre",
         action: 'goToChapter("mort_2")',
       },
+      {
+        text: "Effacer ma partie",
+        action:'reset()',
+      },
     ],
     video: "assets/video/accident.mp4",
   },
@@ -182,6 +238,10 @@ const chaptersObj = {
         text: "Recommencer le voyage",
         action: 'restart()',
       },
+      {
+        text: "Effacer ma partie",
+        action:'reset()',
+      },
     ],
   },
   autre_train: {
@@ -193,6 +253,10 @@ const chaptersObj = {
         text: "Prochain chapitre",
         action: 'goToChapter("victoire_2")',
       },
+      {
+        text: "Effacer ma partie",
+        action:'reset()',
+      },
     ],
   },
   victoire_2: {
@@ -203,6 +267,10 @@ const chaptersObj = {
       {
         text: "Recommencer le voyage",
         action: 'restart()',
+      },
+      {
+        text: "Effacer ma partie",
+        action:'reset()',
       },
     ],
   },
@@ -218,6 +286,9 @@ if(localStorage.getItem('chapitre') == null){
 }
 
 const son = new Audio("assets/son/zoom.wav");
+
+let choixSon = true
+
 
 function goToChapter(chapterName) {
   const titre = document.querySelector(".titre");
@@ -248,10 +319,10 @@ function goToChapter(chapterName) {
   } else {
     baliseImg.innerHTML = `<img class="imageChapitre" src=${chaptersObj[chapterName].img}>`;
   }
-
+if (choixSon == true){
   son.currentTime = 0;  
   son.play();
-
+}
   //sauvegarde
   let chap = chapterName;
   localStorage.setItem("chapitre", chap);
@@ -275,3 +346,5 @@ function reset(){
   localStorage.clear()
   goToChapter('le_depart')
 }
+
+
