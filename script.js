@@ -288,7 +288,10 @@ if(localStorage.getItem('chapitre') == null){
 const son = new Audio("assets/son/zoom.wav");
 
 let choixSon = true
-
+let input = document.querySelector('.input')
+input.addEventListener('change', function(){
+  choixSon = false
+})
 
 function goToChapter(chapterName) {
   const titre = document.querySelector(".titre");
