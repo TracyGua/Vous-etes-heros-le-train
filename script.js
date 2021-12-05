@@ -26,7 +26,7 @@ const chaptersObj = {
       },
       {
         text: "Effacer ma partie",
-        action:'reset()',
+        action: "reset()",
       },
     ],
     video: "assets/video/train_passe.mp4",
@@ -40,7 +40,7 @@ const chaptersObj = {
       { text: "Rester dans le train", action: 'goToChapter("arret_2")' },
       {
         text: "Effacer ma partie",
-        action:'reset()',
+        action: "reset()",
       },
     ],
   },
@@ -55,7 +55,7 @@ const chaptersObj = {
       },
       {
         text: "Effacer ma partie",
-        action:'reset()',
+        action: "reset()",
       },
     ],
   },
@@ -70,7 +70,7 @@ const chaptersObj = {
       },
       {
         text: "Effacer ma partie",
-        action:'reset()',
+        action: "reset()",
       },
     ],
     video: "assets/video/courir.mp4",
@@ -86,7 +86,7 @@ const chaptersObj = {
       },
       {
         text: "Effacer ma partie",
-        action:'reset()',
+        action: "reset()",
       },
     ],
   },
@@ -99,7 +99,7 @@ const chaptersObj = {
       { text: "Non", action: 'goToChapter("debut_bataille")' },
       {
         text: "Effacer ma partie",
-        action:'reset()',
+        action: "reset()",
       },
     ],
   },
@@ -114,7 +114,7 @@ const chaptersObj = {
       },
       {
         text: "Effacer ma partie",
-        action:'reset()',
+        action: "reset()",
       },
     ],
     video: "assets/video/fight.mp4",
@@ -126,11 +126,11 @@ const chaptersObj = {
     options: [
       {
         text: "Recommencer le voyage",
-        action: 'restart()',
+        action: "restart()",
       },
       {
         text: "Effacer ma partie",
-        action:'reset()',
+        action: "reset()",
       },
     ],
   },
@@ -145,7 +145,7 @@ const chaptersObj = {
       },
       {
         text: "Effacer ma partie",
-        action:'reset()',
+        action: "reset()",
       },
     ],
   },
@@ -161,7 +161,7 @@ const chaptersObj = {
       },
       {
         text: "Effacer ma partie",
-        action:'reset()',
+        action: "reset()",
       },
     ],
   },
@@ -172,11 +172,11 @@ const chaptersObj = {
     options: [
       {
         text: "Recommencer le voyage",
-        action: 'restart()',
+        action: "restart()",
       },
       {
         text: "Effacer ma partie",
-        action:'reset()',
+        action: "reset()",
       },
     ],
   },
@@ -192,7 +192,7 @@ const chaptersObj = {
       },
       {
         text: "Effacer ma partie",
-        action:'reset()',
+        action: "reset()",
       },
     ],
   },
@@ -208,7 +208,7 @@ const chaptersObj = {
       },
       {
         text: "Effacer ma partie",
-        action:'reset()',
+        action: "reset()",
       },
     ],
     video: "assets/video/train_passe2.mp4",
@@ -224,7 +224,7 @@ const chaptersObj = {
       },
       {
         text: "Effacer ma partie",
-        action:'reset()',
+        action: "reset()",
       },
     ],
     video: "assets/video/accident.mp4",
@@ -236,11 +236,11 @@ const chaptersObj = {
     options: [
       {
         text: "Recommencer le voyage",
-        action: 'restart()',
+        action: "restart()",
       },
       {
         text: "Effacer ma partie",
-        action:'reset()',
+        action: "reset()",
       },
     ],
   },
@@ -255,7 +255,7 @@ const chaptersObj = {
       },
       {
         text: "Effacer ma partie",
-        action:'reset()',
+        action: "reset()",
       },
     ],
   },
@@ -266,32 +266,36 @@ const chaptersObj = {
     options: [
       {
         text: "Recommencer le voyage",
-        action: 'restart()',
+        action: "restart()",
       },
       {
         text: "Effacer ma partie",
-        action:'reset()',
+        action: "reset()",
       },
     ],
   },
 };
 
-function restart(){
-  goToChapter("le_depart")
+function restart() {
+  goToChapter("le_depart");
   canFight = false;
 }
 
-if(localStorage.getItem('chapitre') == null){
-  goToChapter("le_depart")
+if (localStorage.getItem("chapitre") == null) {
+  goToChapter("le_depart");
 }
 
 const son = new Audio("assets/son/zoom.wav");
 
-let choixSon = true
-let input = document.querySelector('.input')
-input.addEventListener('change', function(){
-  choixSon = false
-})
+let choixSon = true;
+let input = document.querySelector(".input");
+input.addEventListener("change", function () {
+  if (choixSon == true) {
+    choixSon = false;
+  } else {
+    choixSon = true;
+  }
+});
 
 function goToChapter(chapterName) {
   const titre = document.querySelector(".titre");
@@ -322,15 +326,27 @@ function goToChapter(chapterName) {
   } else {
     baliseImg.innerHTML = `<img class="imageChapitre" src=${chaptersObj[chapterName].img}>`;
   }
-if (choixSon == true){
-  son.currentTime = 0;  
-  son.play();
-}
+  if (choixSon == true) {
+    son.currentTime = 0;
+    son.play();
+  }
   //sauvegarde
   let chap = chapterName;
   localStorage.setItem("chapitre", chap);
+  //5.2
+  let ajoutClass = chapterName;
+  let body = document.body;
+  localStorage.setItem("ajoutClass", ajoutClass);
+  body.classList.add(localStorage.getItem("ajoutClass"));
+  if (
+    body.classList.contains(localStorage.getItem("ajoutClass")) !=
+    localStorage.getItem("ajoutClass")
+  ) {
+    body.classList.remove(localStorage.getItem("ajoutClass"));
+  }
 }
 
+/////
 if (localStorage.getItem("chapitre") != "le_depart") {
   goToChapter(localStorage.getItem("chapitre"));
 } else {
@@ -344,10 +360,8 @@ if (localStorage.getItem("canFight") == "true") {
 }
 
 //fonction reset
-function reset(){
+function reset() {
   canFight = false;
-  localStorage.clear()
-  goToChapter('le_depart')
+  localStorage.clear();
+  goToChapter("le_depart");
 }
-
-
