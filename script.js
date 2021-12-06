@@ -1,4 +1,6 @@
 let canFight = false;
+let choixSon = true;
+const son = new Audio("assets/son/zoom.wav");
 
 function fight() {
   canFight = true;
@@ -285,9 +287,9 @@ if (localStorage.getItem("chapitre") == null) {
   goToChapter("le_depart");
 }
 
-const son = new Audio("assets/son/zoom.wav");
 
-let choixSon = true;
+
+
 let input = document.querySelector(".input");
 input.addEventListener("change", function () {
   if (choixSon == true) {
