@@ -334,16 +334,8 @@ function goToChapter(chapterName) {
   let chap = chapterName;
   localStorage.setItem("chapitre", chap);
   //5.2
-  let ajoutClass = chapterName;
   let body = document.body;
-  localStorage.setItem("ajoutClass", ajoutClass);
-  body.classList.add(localStorage.getItem("ajoutClass"));
-  if (
-    body.classList.contains(localStorage.getItem("ajoutClass")) !=
-    localStorage.getItem("ajoutClass")
-  ) {
-    body.classList.remove(localStorage.getItem("ajoutClass"));
-  }
+  body.className = chapterName;
 }
 
 /////
