@@ -87,7 +87,9 @@ ul ul:last-child button{
 .attaque,
 .prochain_train,
 .retrouve {
- background-color: #dfcb68;
+ background-image:url('https://3kpnuxym9k04c8ilz2quku1czd-wpengine.netdna-ssl.com/wp-content/uploads/2015/12/IMG_8672.jpg');
+ background-repeat: no-repeat;
+  background-size: cover;
 }
 .mort_1 .game,
 .mort_2 .game{
