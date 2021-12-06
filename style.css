@@ -74,3 +74,26 @@ button:hover {
   background-color: #ef6f6c;
   cursor: pointer;
 }
+ul ul:last-child button{
+  color:#59c9a5;
+}
+.victoire_1,
+.victoire_2 {
+  background-color: #afe48a;
+  background-image: url('assets/imgs/chap_10.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.attaque,
+.prochain_train,
+.retrouve {
+ background-color: #dfcb68;
+}
+.mort_1 .game,
+.mort_2 .game{
+background-color: #344055;
+}
+.mort_1,
+.mort_2{
+background-color: #409278;
+}
