@@ -74,6 +74,3 @@ button:hover {
   background-color: #ef6f6c;
   cursor: pointer;
 }
-ul ul:last-child button {
-  color: #59c9a5;
-}
