@@ -59,7 +59,7 @@ h1 {
   height: 100%;
 }
 button {
-  color: #465775;
+  color: #4b4d52;
   font-size: 13px;
   text-transform: uppercase;
   list-style-type: none;
@@ -90,6 +90,11 @@ ul ul:last-child button{
  background-image:url('https://3kpnuxym9k04c8ilz2quku1czd-wpengine.netdna-ssl.com/wp-content/uploads/2015/12/IMG_8672.jpg');
  background-repeat: no-repeat;
   background-size: cover;
+}
+.attaque .game,
+.prochain_train .game,
+.retrouve .game{
+  background-color: rgba(70, 87, 117, 0.7);
 }
 .mort_1 .game,
 .mort_2 .game{
