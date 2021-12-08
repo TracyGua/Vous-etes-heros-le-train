@@ -127,7 +127,7 @@ const chaptersObj = {
     img: "assets/imgs/chap_07.jpg",
     options: [
       {
-        text: "Recommencer le voyage",
+        text: "Retourner au début",
         action: "restart()",
       },
       {
@@ -173,7 +173,7 @@ const chaptersObj = {
     img: "assets/imgs/chap_10.jpg",
     options: [
       {
-        text: "Recommencer le voyage",
+        text: "Retourner au début",
         action: "restart()",
       },
       {
@@ -237,7 +237,7 @@ const chaptersObj = {
     img: "assets/imgs/chap_14.jpg",
     options: [
       {
-        text: "Recommencer le voyage",
+        text: "Retourner au début",
         action: "restart()",
       },
       {
@@ -267,7 +267,7 @@ const chaptersObj = {
     img: "assets/imgs/chap_16.jpg",
     options: [
       {
-        text: "Recommencer le voyage",
+        text: "Retourner au début",
         action: "restart()",
       },
       {
@@ -286,9 +286,6 @@ function restart() {
 if (localStorage.getItem("chapitre") == null) {
   goToChapter("le_depart");
 }
-
-
-
 
 let input = document.querySelector(".input");
 input.addEventListener("change", function () {

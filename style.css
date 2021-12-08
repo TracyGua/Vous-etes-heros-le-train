@@ -74,33 +74,37 @@ button:hover {
   background-color: #ef6f6c;
   cursor: pointer;
 }
-ul ul:last-child button{
-  color:#59c9a5;
+ul ul:last-child button {
+  color: #59c9a5;
 }
 .victoire_1,
 .victoire_2 {
   background-color: #afe48a;
-  background-image: url('assets/imgs/chap_10.jpg');
+  background-image: url("assets/imgs/chap_10.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+.victoire_1 .game,
+.victoire_2 .game {
+  background-color: rgba(70, 87, 117, 0.9);
 }
 .attaque,
 .prochain_train,
 .retrouve {
- background-image:url('https://3kpnuxym9k04c8ilz2quku1czd-wpengine.netdna-ssl.com/wp-content/uploads/2015/12/IMG_8672.jpg');
- background-repeat: no-repeat;
+  background-image: url("https://3kpnuxym9k04c8ilz2quku1czd-wpengine.netdna-ssl.com/wp-content/uploads/2015/12/IMG_8672.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
 }
 .attaque .game,
 .prochain_train .game,
-.retrouve .game{
+.retrouve .game {
   background-color: rgba(70, 87, 117, 0.7);
 }
 .mort_1 .game,
-.mort_2 .game{
-background-color: #344055;
+.mort_2 .game {
+  background-color: #344055;
 }
 .mort_1,
-.mort_2{
-background-color: #409278;
+.mort_2 {
+  background-color: #409278;
 }
